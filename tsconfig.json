@@ -1,7 +1,23 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"]
+    }
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
 }
+
+
+//  "compilerOptions": {
+//    "baseUrl": "src",
+//    "paths": {
+//      "@components/*": ["components/*"]
+//    },
+//    "jsx": "react-jsx", // For React 17+ with new JSX Transform
+//    "allowJs": true
+//  },
