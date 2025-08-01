@@ -3,7 +3,8 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-import { globalIgnores } from 'eslint/config'
+import reactPlugin from "eslint-plugin-react";
+import {globalIgnores} from 'eslint/config'
 
 export default tseslint.config([
   globalIgnores(['dist']),
@@ -20,4 +21,20 @@ export default tseslint.config([
       globals: globals.browser,
     },
   },
+  {
+    plugins: {
+      react: reactPlugin
+    },
+    rules: {
+      "react/jsx-tag-spacing": [
+        "error",
+        {
+          closingSlash: "never", // No space before the closing slash (self-closing tags)
+          beforeSelfClosing: "always", // A space is required before the closing bracket
+          afterOpening: "never", // No space after opening `<`
+          beforeClosing: "never" // No space before closing `</`
+        }
+      ]
+    }
+  }
 ])
