@@ -1,0 +1,7 @@
+{
+  "title": "Добро пожаловать react-i18next",
+  "description": {
+    "part1": "Перевод To get started, edit <1>src/App.js</1> and save to reload.",
+    "part2": "Перевод Switch language between english and german using buttons above."
+  }
+}
