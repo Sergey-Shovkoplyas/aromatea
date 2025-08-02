@@ -1,10 +1,16 @@
-import Header from "@components/header/Header.tsx";
+import reactLogo from '../../assets/react.svg'
+import {useTranslation} from "react-i18next";
 
 const Home = () => {
+  const {t} = useTranslation();
+  
   return (
     <div>
-      <Header />
       <h1>Home page</h1>
+      <h3>Translation: {t('title')}</h3>
+      <a href="https://react.dev" target="_blank">
+        <img src={reactLogo} className="logo react" alt="React logo"/>
+      </a>
     </div>
   );
 };

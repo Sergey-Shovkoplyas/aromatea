@@ -26,7 +26,9 @@
     /* Custom */
     "baseUrl": ".",                 // Base path for module resolution
     "paths": {
-      "@components/*": ["src/components/*"]  // Alias for components
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@services/*": ["src/services/*"],
     }
   },
   "include": ["src"]
