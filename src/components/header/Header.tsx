@@ -1,6 +1,6 @@
-import * as S from './Header.styles'
-import {Link} from "react-router";
-import ChangeLang from "@components/header/cangeLang/ChangeLang.tsx";
+import * as S from './Header.styles';
+import { Link } from 'react-router';
+import ChangeLang from '@components/header/cangeLang/ChangeLang.tsx';
 
 interface IMenuItem {
   label: string;
@@ -10,26 +10,24 @@ interface IMenuItem {
 const menuItems: IMenuItem[] = [
   {
     label: 'Home',
-    href: '/'
+    href: '/',
   },
   {
     label: 'About us',
-    href: '/about'
+    href: '/about',
   },
   {
     label: 'Contact',
-    href: '/contact'
+    href: '/contact',
   },
 ];
 
 const Head = () => {
-  
-  
   return (
     <S.Root>
       <ChangeLang />
-      {menuItems.map((item) => (
-        <ul>
+      {menuItems.map((item, index) => (
+        <ul key={index}>
           <li>
             <Link to={item.href}>{item.label}</Link>
           </li>

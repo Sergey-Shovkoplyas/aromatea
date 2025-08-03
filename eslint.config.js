@@ -3,8 +3,8 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
-import reactPlugin from "eslint-plugin-react";
-import {globalIgnores} from 'eslint/config'
+import reactPlugin from "eslint-plugin-react"
+import { globalIgnores } from 'eslint/config' 
 
 export default tseslint.config([
   globalIgnores(['dist']),
@@ -15,6 +15,7 @@ export default tseslint.config([
       tseslint.configs.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
+      reactPlugin.configs.flat.recommended,
     ],
     languageOptions: {
       ecmaVersion: 2020,
@@ -26,6 +27,8 @@ export default tseslint.config([
       react: reactPlugin
     },
     rules: {
+      "react/react-in-jsx-scope": "off",
+      "object-curly-spacing": ["error", "always"], // Enforces spaces inside { t }
       "react/jsx-tag-spacing": [
         "error",
         {
@@ -34,7 +37,15 @@ export default tseslint.config([
           afterOpening: "never", // No space after opening `<`
           beforeClosing: "never" // No space before closing `</`
         }
-      ]
+      ],
+      // "react/jsx-curly-spacing": [
+      //   "error",
+      //   {
+      //     when: "always",
+      //     children: true,
+      //     attributes: false // Enforces spaces only for children, not for attributes
+      //   }
+      // ]
     }
   }
 ])
