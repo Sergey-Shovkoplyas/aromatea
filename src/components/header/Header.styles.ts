@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Root = styled.header`
-  background: red;
+  background: ${({ theme }) => theme.colors.primary};
 `;
