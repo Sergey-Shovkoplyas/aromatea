@@ -1,28 +1,31 @@
 import * as S from './Header.styles';
 import { Link } from 'react-router';
 import ChangeLang from '@components/header/cangeLang/ChangeLang.tsx';
+import useDetectLocale from '../../hooks/useDetectLocale.ts';
 
 interface IMenuItem {
   label: string;
   href: string;
 }
 
-const menuItems: IMenuItem[] = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'About us',
-    href: '/about',
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
-];
-
 const Head = () => {
+  const locale = useDetectLocale();
+
+  const menuItems: IMenuItem[] = [
+    {
+      label: 'Home',
+      href: `/${locale}/`,
+    },
+    {
+      label: 'About us',
+      href: `/${locale}/about`,
+    },
+    {
+      label: 'Contact',
+      href: `/${locale}/contact`,
+    },
+  ];
+
   return (
     <S.Root>
       <ChangeLang />

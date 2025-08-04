@@ -7,9 +7,9 @@ import Home from '@pages/home/Home.tsx';
 const Routes = () => {
   return (
     <ReactRoutes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/:locale/" element={<Home />} />
+      <Route path="/:locale/about" element={<About />} />
+      <Route path="/:locale/contact" element={<Contact />} />
     </ReactRoutes>
   );
 };
