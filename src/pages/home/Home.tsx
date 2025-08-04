@@ -6,10 +6,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home page</h1>
-
-      <h3>Translation!!!: {t('title')}</h3>
-
+      <h1>{t('test.home')}</h1>
       <a href="https://react.dev" target="_blank" rel="noreferrer">
         <img src={reactLogo} className="logo react" alt="React logo" />
       </a>
